@@ -1,0 +1,7 @@
+alias n="npm"
+alias ni="npm install"
+alias nci="npm ci"
+alias dev="npm run dev"
+alias watch="npm run watch"
+alias build="npm run build"
+alias prod="npm run production"
