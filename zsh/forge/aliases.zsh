@@ -8,7 +8,7 @@ alias migrate="php artisan migrate"
 alias fresh="php artisan migrate:fresh"
 alias seed="php artisan db:seed"
 alias tinker="php artisan tinker"
-alias code="phpstorm . & disown"
+
 # Composer
 alias c="composer"
 alias uc="php -d memory_limit=-1 /usr/local/bin/composer"

@@ -4,8 +4,10 @@ alias hosts="sudo vim /etc/hosts"
 alias sshconfig="vim ~/.ssh/config"
 alias key="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias cleardns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-alias z="php  /Users/mauriciodulce/.dotfiles/prompts/project-symlinking.php"
-
+alias dev="cd /Volumes/WorkDrive/Development"
+alias wpdev="cd /Volumes/WorkDrive/Development/PHP/WordPress-Projects"  
+alias craft="cd /Volumes/WorkDrive/Development/PHP/CraftCMS-Projects"
+alias st="cd /Volumes/WorkDrive/Development/PHP/Statamic-Projects"
 
 # ------------------------------------------------------------------------------
 # Internet Connection
