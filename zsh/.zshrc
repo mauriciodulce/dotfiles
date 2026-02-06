@@ -64,25 +64,7 @@ export PATH="$HOME/.spin/bin:$PATH"
 
 source ~/.config/op/plugins.sh
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
-export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
-# Herd injected PHP 8.4 configuration.
-export HERD_PHP_84_INI_SCAN_DIR="/Users/mauricio/Library/Application Support/Herd/config/php/84/"
-
-
-# Herd injected PHP binary.
-export PATH="/Users/mauricio/Library/Application Support/Herd/bin/":$PATH
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-export JIRA_API_TOKEN=""
-autoload -U compinit; compinit
-
-
-# Herd injected PHP 8.3 configuration.
-export HERD_PHP_83_INI_SCAN_DIR="/Users/mauricio/Library/Application Support/Herd/config/php/83/"
-
-
-# Herd injected PHP 8.2 configuration.
-export HERD_PHP_82_INI_SCAN_DIR="/Users/mauricio/Library/Application Support/Herd/config/php/82/"
 
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
@@ -92,8 +74,6 @@ eval "$(pyenv init -)"
 
 
 
-# Herd injected PHP 8.5 configuration.
-export HERD_PHP_85_INI_SCAN_DIR="/Users/mauricio/Library/Application Support/Herd/config/php/85/"
 
 # ------------------------------------------------------------------------------
 # Kubernetes Safety Config
