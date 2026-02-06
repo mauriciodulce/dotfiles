@@ -2,6 +2,7 @@
     "require": {
         "statamic/cli": "^3.6",
         "laravel/pint": "^1.10",
-        "illuminate/collections": "^11.21"
+        "illuminate/collections": "^11.21",
+        "laravel/forge-cli": "^1.8"
     }
 }
