@@ -1,7 +1,7 @@
 [user]
 	name = Mauricio Dulce
 	email = mauricio@dulce.dev
-	signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBuBXQuXzWimypvxMf3piXmLJGCV1J6DMWxHK7oXURhK GitHub Signing Key
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBuBXQuXzWimypvxMf3piXmLJGCV1J6DMWxHK7oXURhK
 
 [core]
     excludesFile = /Users/mauriciodulce/.dotfiles/git/gitignore_global

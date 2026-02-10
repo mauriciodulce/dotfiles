@@ -10,41 +10,41 @@
     command: "sudo --validate"
 - clean: ['~']
 - link:
-    ~/.gitconfig: git/gitconfig
-    ~/.gitignore: git/gitignore
-    ~/.composer/composer.json: composer/composer.json
-    ~/.composer/config.json: composer/config.json
-    ~/.hammerspoon: hammerspoon
-    ~/.vimrc: vim/.vimrc
-    ~/.zshrc: zsh/.zshrc
-# - create:
-#     - ~/Code
-#     - ~/Code/Freelance
-#     - ~/Code/OpenSource
-#     - ~/Code/Personal
-#     - ~/Code/SideProjects
-#     - ~/Code/Statamic
-#     - ~/Code/Throwaway
+     ~/.gitconfig: git/gitconfig
+     ~/.gitignore: git/gitignore
+     ~/.composer/composer.json: composer/composer.json
+     ~/.composer/config.json: composer/config.json
+     ~/.hammerspoon: hammerspoon
+     ~/.vimrc: vim/.vimrc
+     ~/.zshrc: zsh/.zshrc
+- create:
+     - ~/Code
+     - ~/Code/CraftCms
+     - ~/Code/React
+     - ~/Code/Laravel
+     - ~/Code/Drupal
+     - ~/Code/Php
+     - ~/Code/Terraform
+     - ~/Code/DevOps
 - shell:
-  - description: Hushing login
-    command: "[ -f ~/.hushlogin ] || touch ~/.hushlogin"
-  - description: Installing Oh My Zsh
-    command: "[ -d ~/.oh-my-zsh ] || /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
-  - description: Install Oh My Zsh Syntax Highlighting
-    command: "[ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting"
-  - description: Installing Homebrew
-    command: "[ -x \"$(which brew)\" ] || /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\" && echo >> /Users/mauricio/.zprofile && echo 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' >> /Users/mauricio/.zprofile && eval \"$(/opt/homebrew/bin/brew shellenv)\""
-  - description: Updating Homebrew
-    command: "brew update"
-  - description: Installing Brewfile bundle
-    command: "brew bundle"
-  - description: Cleaning up Homebrew
-    command: "brew cleanup"
-  - description: Switch Git remote to SSH
-    command: "git remote set-url origin git@github.com:mauriciodulce/dotfiles.git"
-  - description: Installing Brewfile bundle
-    command: brew bundle --file=~/.dotfiles/Brewfile
-  - description: "Installing mkceert"
-  - description: Apply macOS Preferences
-    command: "./.macos"
-    quiet: false
+   - description: Hushing login
+     command: "[ -f ~/.hushlogin ] || touch ~/.hushlogin"
+   - description: Installing Oh My Zsh
+     command: "[ -d ~/.oh-my-zsh ] || /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
+   - description: Install Oh My Zsh Syntax Highlighting
+     command: "[ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting"
+   - description: Installing Homebrew
+     command: "[ -x \"$(which brew)\" ] || /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\" && echo >> /Users/mauricio/.zprofile && echo 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' >> /Users/mauricio/.zprofile && eval \"$(/opt/homebrew/bin/brew shellenv)\""
+   - description: Updating Homebrew
+     command: "brew update"
+   - description: Installing Brewfile bundle
+     command: "brew bundle"
+   - description: Cleaning up Homebrew
+     command: "brew cleanup"
+   - description: Switch Git remote to SSH
+     command: "git remote set-url origin git@github.com:mauriciodulce/dotfiles.git"
+   - description: Installing Brewfile bundle
+     command: brew bundle --file=~/.dotfiles/Brewfile
+   - description: Apply macOS Preferences
+     command: "./.macos"
+     quiet: false

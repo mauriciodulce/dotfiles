@@ -1,14 +1,11 @@
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/services"
+tap "UpCloudLtd/tap"
+
+
 
 brew "awscli"
-brew "orbstack"
 brew "docker"
 brew "ddev/ddev/ddev"
 brew "cocoapods"
-brew "cursor"
 brew "ffmpeg"
 brew "fzf"
 brew "gh"
@@ -29,10 +26,10 @@ brew "skaffold"
 brew "kubectl"
 brew "mkcert"
 brew "kubeseal"
-brew "1password-cli"
+cask "1password-cli"
 brew "argocd"
 brew "cloudflared"
-# brew "upcloud-cli"
+brew "upcloud-cli"
 brew "pwgen"
 brew "git-flow"
 brew "kustomize"
@@ -43,6 +40,8 @@ brew "tree"
 brew "withgraphite/tap/graphite"
 brew "nss"
 
+cask  "orbstack"
+cask	"cursor"
 cask "1password"
 cask "1password-cli"
 cask "bartender"
@@ -53,7 +52,7 @@ cask "dropshare"
 cask "discord"
 cask "figma"
 cask "firefox"
-cask "flux"
+cask "flux-app"
 cask "hammerspoon"
 cask "imageoptim"
 cask "insomnia"
@@ -73,7 +72,7 @@ cask "transmit"
 cask "tidal"
 cask "zoom"
 
-# mas "Things", id: 904280696
-# mas "Pages", id: 409201541
-# mas "Keynote", id: 409183694
-# mas "Numbers", id: 409203825
+mas "Things", id: 904280696
+mas "Pages", id: 409201541
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
