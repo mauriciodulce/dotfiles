@@ -45,6 +45,8 @@
      command: "git remote set-url origin git@github.com:mauriciodulce/dotfiles.git"
    - description: Installing Brewfile bundle
      command: brew bundle --file=~/.dotfiles/Brewfile
+   - description: Make .macos executable
+     command: "chmod +x ~/.dotfiles/.macos"
    - description: Apply macOS Preferences
      command: "./.macos"
      quiet: false
