@@ -62,8 +62,8 @@ eval "$(zoxide init zsh)"
 export PATH="$HOME/.spin/bin:$PATH"
 
 
-# source /Users/mauricio/.op/plugins.sh
-# source ~/.config/op/plugins.sh
+
+source ~/.config/op/plugins.sh
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
 
@@ -88,4 +88,3 @@ compinit
 # End of Docker CLI completions
 autoload -U compinit; compinit
 
-source /Users/mauricio/.op/plugins.sh
