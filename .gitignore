@@ -1,3 +1,4 @@
 Brewfile.lock.json
 dotbot
 /.idea
+zsh/secrets.zsh
