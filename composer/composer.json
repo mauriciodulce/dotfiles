@@ -4,6 +4,6 @@
         "laravel/pint": "^1.10",
         "illuminate/collections": "^13.0",
         "laravel/forge-cli": "^1.8",
-        "laravel/laravel": "^11.6"
+        "laravel/laravel": "^13.0"
     }
 }
