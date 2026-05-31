@@ -4,7 +4,7 @@
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBuBXQuXzWimypvxMf3piXmLJGCV1J6DMWxHK7oXURhK
 
 [core]
-    excludesFile = /Users/mauriciodulce/.dotfiles/git/gitignore_global
+    excludesFile = ~/.dotfiles/git/gitignore_global
 
 [init]
     defaultBranch = main
@@ -26,7 +26,7 @@
 [include]
     path = ~/.gitconfig-signing
 [gpg]
-	program = /usr/local/bin/gpg
+	program = /opt/homebrew/bin/gpg
 	format = ssh
 [gpg "ssh"]
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
@@ -34,7 +34,7 @@
 	postBuffer = 524288000
 [credential "https://github.com"]
 	helper = 
-	helper = !/usr/local/bin/gh auth git-credential
+	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
-	helper = !/usr/local/bin/gh auth git-credential
+	helper = !/opt/homebrew/bin/gh auth git-credential
