@@ -5,14 +5,15 @@ export ZSH="$HOME/.oh-my-zsh"
 # Zsh Theme
 # ------------------------------------------------------------------------------
 
-source "/opt/homebrew/opt/spaceship/spaceship.zsh"
+# Spaceship se instala via Homebrew, no como tema OMZ — se carga manualmente.
+# ZSH_THEME vacío le dice a OMZ que no gestione el tema.
+ZSH_THEME=""
 
 
 # ------------------------------------------------------------------------------
 # Zsh Config
 # ------------------------------------------------------------------------------
 
-ZSH_THEME="robbyrussell"
 CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
@@ -24,56 +25,54 @@ plugins=(git zsh-syntax-highlighting zsh-completions terraform)
 
 source $ZSH/oh-my-zsh.sh
 
-# ------------------------------------------------------------------------------
-# Zsh autocomplete
-# ------------------------------------------------------------------------------
-
-fpath+=$DOTFILES/zsh/completions
-autoload -Uz compinit && compinit
+# Spaceship prompt (instalado via: brew install spaceship)
+[[ -f "/opt/homebrew/opt/spaceship/spaceship.zsh" ]] && source "/opt/homebrew/opt/spaceship/spaceship.zsh"
 
 # ------------------------------------------------------------------------------
 # Paths
 # ------------------------------------------------------------------------------
 
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH=$PATH:/usr/local/mysql/bin/
 export PATH=/usr/local/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+export PATH="$HOME/.spin/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
 
 
 # ------------------------------------------------------------------------------
-# Node Version Manager (NVM)
+# Node Version Manager (NVM) — lazy load para startup rápido
+# Se inicializa solo cuando se usa nvm, node, npm, npx o aliases n/ni/nci/nd
 # ------------------------------------------------------------------------------
 
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+
+# Carga lazy: define placeholders que se reemplazan al primer uso
+_nvm_load() {
+  unset -f nvm node npm npx n ni nci nd 2>/dev/null
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+}
+
+nvm()  { _nvm_load && nvm "$@"; }
+node() { _nvm_load && node "$@"; }
+npm()  { _nvm_load && npm "$@"; }
+npx()  { _nvm_load && npx "$@"; }
+
+
 # ------------------------------------------------------------------------------
 # Zoxide (smarter cd command)
 # https://github.com/ajeetdsouza/zoxide
 # ------------------------------------------------------------------------------
 
-eval "$(zoxide init zsh)" 
-
-export PATH="$HOME/.spin/bin:$PATH"
+eval "$(zoxide init zsh)"
 
 
-
-source ~/.config/op/plugins.sh
-export PATH="/opt/homebrew/opt/curl/bin:$PATH"
-
-
+# ------------------------------------------------------------------------------
 # pyenv
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init --path)"
+# ------------------------------------------------------------------------------
+
 eval "$(pyenv init -)"
-
-
-
 
 
 # ------------------------------------------------------------------------------
@@ -81,10 +80,33 @@ eval "$(pyenv init -)"
 # ------------------------------------------------------------------------------
 
 source $DOTFILES/zsh/k8s-safety.zsh
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/mauricio/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
-autoload -U compinit; compinit
 
+# ------------------------------------------------------------------------------
+# Zsh autocomplete
+# (consolidado aquí al final, después de todos los fpath additions)
+# ------------------------------------------------------------------------------
+
+fpath+=$DOTFILES/zsh/completions
+[[ -d "$HOME/.docker/completions" ]] && fpath=($HOME/.docker/completions $fpath)
+autoload -Uz compinit && compinit
+
+
+# ------------------------------------------------------------------------------
+# 1Password CLI
+# ------------------------------------------------------------------------------
+
+[[ -f "$HOME/.op/plugins.sh" ]] && source "$HOME/.op/plugins.sh"
+
+
+# ------------------------------------------------------------------------------
+# Secrets & tokens (gitignored — ver ~/.dotfiles/zsh/secrets.zsh)
+# ------------------------------------------------------------------------------
+
+[[ -f $DOTFILES/zsh/secrets.zsh ]] && source $DOTFILES/zsh/secrets.zsh
+
+
+# ------------------------------------------------------------------------------
+# Aliases
+# ------------------------------------------------------------------------------
+
+alias oc='op run --env-file ~/.config/opencode/.env -- opencode'
