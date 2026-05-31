@@ -46,7 +46,7 @@ osslink() {
     # vendor symlink
     rm -rf vendor/$PACAKGE_VENDOR/$PACKAGE_NAME
     ln -s $CLONE_LOCATION vendor/$PACAKGE_VENDOR/$PACKAGE_NAME
-    la vendor/$PACAKGE_VENDOR
+    ls -lA vendor/$PACAKGE_VENDOR
 
     # public/vendor symlink
     if [[ -d "$CLONE_LOCATION/resources/dist" ]]
@@ -59,17 +59,17 @@ osslink() {
             mkdir public/vendor/statamic
 
             ln -s $CLONE_LOCATION/resources/dist public/vendor/statamic/cp
-            la public/vendor/statamic/cp
+            ls -lA public/vendor/statamic/cp
 
             ln -s $CLONE_LOCATION/resources/dist-frontend public/vendor/statamic/frontend
-            la public/vendor/statamic/frontend
+            ls -lA public/vendor/statamic/frontend
         fi
     else
         if [[ -d "$CLONE_LOCATION/dist/build" ]]
         then
             rm -rf public/vendor/$PACKAGE_NAME
             ln -s $CLONE_LOCATION/dist public/vendor/$PACKAGE_NAME
-            la public/vendor/$PACKAGE_NAME
+            ls -lA public/vendor/$PACKAGE_NAME
         fi
     fi
 }

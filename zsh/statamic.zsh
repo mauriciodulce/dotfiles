@@ -1,7 +1,10 @@
 alias p="php please"
 alias pdeets="php please support:details"
-alias puserme="cp ~/.dotfiles/statamic/mauricio@dulce.dev.yaml users/mauricio@dulce.dev.yaml"
 alias stacheid="a tinker --execute=\"echo app('stache')->generateId()\" | pbcopy"
+
+puser() {
+    cp ~/.dotfiles/statamic/mauricio@dulce.dev.yaml users/mauricio@dulce.dev.yaml
+}
 
 
 # ------------------------------------------------------------------------------
