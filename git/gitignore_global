@@ -8,3 +8,5 @@ Thumbs.db
 *.sql
 *.sqlite
 .obsidian
+
+**/.claude/settings.local.json
