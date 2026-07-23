@@ -64,6 +64,9 @@ node() { _nvm_load && node "$@"; }
 npm()  { _nvm_load && npm "$@"; }
 npx() { _nvm_load && npx "$@"; }
 
+# Expone el bin de nvm en PATH sin disparar la carga completa (ver node.zsh)
+source $DOTFILES/zsh/node.zsh
+
 
 # -----------------------------------------------------------------------------
 # Zoxide (smarter cd command)
