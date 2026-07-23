@@ -97,9 +97,9 @@ autoload -Uz compinit && compinit
 # 1Password CLI
 # -----------------------------------------------------------------------------
 
-[[ -f "$HOME/.op/plugins.sh" ]] && source "$HOME/.op/plugins.sh"
+# [[ -f "$HOME/.config/op/plugins.sh" ]] && source "$HOME/.config/op/plugins.sh"
 
-
+# source ~/.config/op/plugins.sh
 # -----------------------------------------------------------------------------
 # Secrets & tokens (gitignored — ver ~/.dotfiles/zsh/secrets.zsh)
 # -----------------------------------------------------------------------------
@@ -153,3 +153,30 @@ export HERD_PHP_83_INI_SCAN_DIR="/Users/mauricio/Library/Application Support/Her
 
 # Herd injected PHP 8.5 configuration.
 export HERD_PHP_85_INI_SCAN_DIR="/Users/mauricio/Library/Application Support/Herd/config/php/85/"
+
+# Herd injected PHP 8.5 configuration.
+export HERD_PHP_85_INI_SCAN_DIR="/Users/mauricio/Library/Application Support/Herd/config/php/85/"
+export ANTHROPIC_MODEL="claude-sonnet-5"
+export PATH="$HOME/.local/bin:$PATH"
+
+
+# Herd injected PHP 8.1 configuration.
+export HERD_PHP_81_INI_SCAN_DIR="/Users/mauricio/Library/Application Support/Herd/config/php/81/"
+
+
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="/Users/mauricio/Library/Application Support/Herd/config/php/82/"
+
+# pnpm
+export PNPM_HOME="/Users/mauricio/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+
+
+
+
+# Herd injected PHP 8.0 configuration.
+export HERD_PHP_80_INI_SCAN_DIR="/Users/mauricio/Library/Application Support/Herd/config/php/80/"
