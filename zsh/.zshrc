@@ -118,7 +118,8 @@ for f in \
   $DOTFILES/zsh/open-source.zsh \
   $DOTFILES/zsh/statamic.zsh \
   $DOTFILES/zsh/opencode.zsh \
-  $DOTFILES/zsh/claude.zsh
+  $DOTFILES/zsh/claude.zsh \
+  $DOTFILES/zsh/openclaw.zsh
 do
   [[ -f "$f" ]] && source "$f"
 done
