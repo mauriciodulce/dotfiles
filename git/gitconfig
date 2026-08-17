@@ -8,7 +8,6 @@
 
 [init]
     defaultBranch = main
-	templatedir = /Users/mauricio/Code/17seas/thankbox-client/devops/templates
 
 [push]
     autoSetupRemote = true
