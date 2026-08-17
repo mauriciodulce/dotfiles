@@ -1,7 +1,7 @@
 [user]
 	name = Mauricio Dulce
 	email = mauricio@dulce.dev
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBuBXQuXzWimypvxMf3piXmLJGCV1J6DMWxHK7oXURhK
+	signingkey = /Users/mauricio/.ssh/signing/key
 
 [core]
     excludesFile = ~/.dotfiles/git/gitignore_global
@@ -28,8 +28,6 @@
 [gpg]
 	program = /opt/homebrew/bin/gpg
 	format = ssh
-[gpg "ssh"]
-	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [http]
 	postBuffer = 524288000
 [credential "https://github.com"]

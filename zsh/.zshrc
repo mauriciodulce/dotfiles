@@ -33,6 +33,7 @@ plugins=(git zsh-syntax-highlighting zsh-completions terraform)
 source $ZSH/oh-my-zsh.sh
 
 # Spaceship prompt (instalado via: brew install spaceship)
+typeset +r SPACESHIP_ROOT 2>/dev/null; unset SPACESHIP_ROOT 2>/dev/null
 [[ -f "/opt/homebrew/opt/spaceship/spaceship.zsh" ]] && source "/opt/homebrew/opt/spaceship/spaceship.zsh"
 
 # -----------------------------------------------------------------------------
@@ -94,7 +95,7 @@ autoload -Uz compinit && compinit
 # 1Password CLI
 # -----------------------------------------------------------------------------
 
-[[ -f "$HOME/.op/plugins.sh" ]] && source "$HOME/.op/plugins.sh"
+# [[ -f "$HOME/.op/plugins.sh" ]] && source "$HOME/.op/plugins.sh"
 
 
 # -----------------------------------------------------------------------------
